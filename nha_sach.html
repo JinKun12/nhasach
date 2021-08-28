@@ -7,11 +7,98 @@
  	<script src="https://cdnjs.cloudfla/-re.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  background-color: white;
+  color: black;
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+</style>
+<style>
+    body {
+      font-family: "Lato", sans-serif;
+    }
+    
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
+    
+    .sidebar a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+    
+    .sidebar a:hover {
+      color: #f1f1f1;
+    }
+    
+    .sidebar .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+    
+    .openbtn {
+      font-size: 20px;
+      cursor: pointer;
+      background-color: #111;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+    }
+    
+    .openbtn:hover {
+      background-color: #444;
+    }
+    
+    #main {
+      transition: margin-left .5s;
+      padding: 16px;
+    }
+    
+    /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+    @media screen and (max-height: 450px) {
+      .sidebar {padding-top: 15px;}
+      .sidebar a {font-size: 18px;}
+    }
+</style>
 </head>
-<body>
+<div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+</div>
+  
+<div id="main">
+    <button class="openbtn" onclick="openNav()">☰ Open Sidebar</button>  
+</div>
+<body onload="myFunction()">
     <img src="photo.png" alt="Logo">
     <nav class="navbar navbar-expand-sm bg-light navbar-light sticky-top">
         <div class="container">
+            <i class="fad fa-lightbulb" onclick="myFunction1()"></i>
             <a class="navbar-brand" href="#"><img src="logo.png" alt="Logo" style="width:150px;"></a>
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -35,7 +122,7 @@
         </div>
     </nav>
     <div class="row">
-        <div class="col-sm-3 style="background-color:lavenderblush;">
+        <div class="col-sm-3 style='background-color:lavenderblush;'">
             <div class="list-group">
                 <a href="#" class="list-group-item list-group-item-warning" style="width:380px; height:45px">Danh Mục Sản Phẩm</a>
                 <a href="#" class="list-group-item list-group-item-action" style="width:380px; height:45px">Sách Trong Nước</a>
@@ -81,7 +168,7 @@
                 <div class="card-body">
                     <h6 class="card-title">Spy X Family - Tập 4 - Tặng Kèm Standee</h6>
                     <p class="card-text">23.750 đ</p>
-                    <a href="#" class="btn btn-primary stretched-link">Mua ngay</a>
+                    <button type="button" onclick="alert('Sản phẩn có giá là: 23.750đ')">Mua ngay</button>
                 </div>
             </div>
         </div>
@@ -91,7 +178,7 @@
                 <div class="card-body">
                     <h6 class="card-title">"Cậu" Ma Nhà Xí Hanako - Tập 1</h6>
                     <p class="card-text">26.600 đ</p>
-                    <a href="#" class="btn btn-primary stretched-link">Mua ngay</a>
+                    <button type="button" onclick="alert('Sản phẩn có giá là: 26.600đ')">Mua ngay</button>
                 </div>
             </div>
         </div>
@@ -101,7 +188,7 @@
                 <div class="card-body">
                     <h6 class="card-title">Thanh Gươm Diệt Quỷ - Kimetsu No Yaiba - Tập 4: Lưỡi Gươm Mạnh Mẽ</h6>
                     <p class="card-text">23.000 đ</p>
-                    <a href="#" class="btn btn-primary stretched-link">Mua ngay</a>
+                    <button type="button" onclick="alert('Sản phẩn có giá là: 23.000đ')">Mua ngay</button>
                 </div>
             </div>
         </div>
@@ -111,7 +198,7 @@
                 <div class="card-body">
                     <h6 class="card-title">Doraemon - Chú Mèo Máy Đến Từ Tương Lai - Tập 0</h6>
                     <p class="card-text">50.000đ</p>
-                    <a href="#" class="btn btn-primary stretched-link">Mua ngay</a>
+                    <button type="button" onclick="alert('Sản phẩn có giá là: 50.000đ')">Mua ngay</button>
                 </div>
             </div>
         </div>
@@ -124,7 +211,7 @@
                 <div class="card-body">
                     <h6 class="card-title">Franken-Stein Ở Baghdad</h6>
                     <p class="card-text">128.760 đ</p>
-                    <a href="#" class="btn btn-primary stretched-link">Mua ngay</a>
+                    <button type="button" onclick="alert('Sản phẩn có giá là: 128.760đ')">Mua ngay</button>
                 </div>
             </div>
         </div>
@@ -134,7 +221,7 @@
                 <div class="card-body">
                     <h6 class="card-title">Tiểu Thư Chariry</h6>
                     <p class="card-text">155.730 đ</p>
-                    <a href="#" class="btn btn-primary stretched-link">Mua ngay</a>
+                    <button type="button" onclick="alert('Sản phẩn có giá là: 155.730đ')">Mua ngay</button>
                 </div>
             </div>
         </div>
@@ -144,7 +231,7 @@
                 <div class="card-body">
                     <h6 class="card-title">Tiệm Sách Cơn Mưa - Tập 3</h6>
                     <p class="card-text">55.200 đ</p>
-                    <a href="#" class="btn btn-primary stretched-link">Mua ngay</a>
+                    <button type="button" onclick="alert('Sản phẩn có giá là: 55.200đ')">Mua ngay</button>
                 </div>
             </div>
         </div>
@@ -154,7 +241,7 @@
                 <div class="card-body">
                     <h6 class="card-title">Tiệm Sách Cơn Mưa - Tập 4</h6>
                     <p class="card-text">55.200 đ</p>
-                    <a href="#" class="btn btn-primary stretched-link">Mua ngay</a>
+                    <button type="button" onclick="alert('Sản phẩn có giá là: 55.200')">Mua ngay</button>
                 </div>
             </div>
         </div>
@@ -167,7 +254,7 @@
                 <div class="card-body">
                     <h6 class="card-title">Câu Chuyện Tương Lai Mà Tôi Bỏ Lỡ</h6>
                     <p class="card-text">97.580 đ</p>
-                    <a href="#" class="btn btn-primary stretched-link">Mua ngay</a>
+                    <button type="button" onclick="alert('Sản phẩn có giá là: 97.580đ')">Mua ngay</button>
                 </div>
             </div>
         </div>
@@ -177,7 +264,7 @@
                 <div class="card-body">
                     <h6 class="card-title">Yêu Em Bằng Mắt, Giữ Em Bằng Tim</h6>
                     <p class="card-text">149.000 đ</p>
-                    <a href="#" class="btn btn-primary stretched-link">Mua ngay</a>
+                    <button type="button" onclick="alert('Sản phẩn có giá là: 149.000đ')">Mua ngay</button>
                 </div>
             </div>
         </div>
@@ -187,7 +274,7 @@
                 <div class="card-body">
                     <h6 class="card-title">Yêu Em Bằng Cả Trái Tim Anh</h6>
                     <p class="card-text">149.000 đ</p>
-                    <a href="#" class="btn btn-primary stretched-link">Mua ngay</a>
+                    <button type="button" onclick="alert('Sản phẩn có giá là: 149.000đ')">Mua ngay</button>
                 </div>
             </div>
         </div>
@@ -197,7 +284,7 @@
                 <div class="card-body">
                     <h6 class="card-title">Vạn Huê Lầu Diễn Nghĩa</h6>
                     <p class="card-text">110.700 đ</p>
-                    <a href="#" class="btn btn-primary stretched-link">Mua ngay</a>
+                    <button type="button" onclick="alert('Sản phẩn có giá là: 110.700đ')">Mua ngay</button>
                 </div>
             </div>
         </div>
@@ -210,7 +297,7 @@
                 <div class="card-body">
                     <h6 class="card-title">Cáo Pax</h6>
                     <p class="card-text">100.920 đ</p>
-                    <a href="#" class="btn btn-primary stretched-link">Mua ngay</a>
+                    <button type="button" onclick="alert('Sản phẩn có giá là: 100.920đ')">Mua ngay</button>
                 </div>
             </div>
         </div>
@@ -220,7 +307,7 @@
                 <div class="card-body">
                     <h6 class="card-title">Macbeth</h6>
                     <p class="card-text">45.000 đ</p>
-                    <a href="#" class="btn btn-primary stretched-link">Mua ngay</a>
+                    <button type="button" onclick="alert('Sản phẩn có giá là: 45.000đ')">Mua ngay</button>
                 </div>
             </div>
         </div>
@@ -230,7 +317,7 @@
                 <div class="card-body">
                     <h6 class="card-title">Bắt Sâu</h6>
                     <p class="card-text">86.130 đ</p>
-                    <a href="#" class="btn btn-primary stretched-link">Mua ngay</a>
+                    <button type="button" onclick="alert('Sản phẩn có giá là: 86.130đ')">Mua ngay</button>
                 </div>
             </div>
         </div>
@@ -240,7 +327,7 @@
                 <div class="card-body">
                     <h6 class="card-title">Rừng Sâu Tăm Tối</h6>
                     <p class="card-text">143.550 đ</p>
-                    <a href="#" class="btn btn-primary stretched-link">Mua ngay</a>
+                    <button type="button" onclick="alert('Sản phẩn có giá là: 143.550đ')">Mua ngay</button>
                 </div>
             </div>
         </div>
@@ -253,7 +340,7 @@
                 <div class="card-body">
                     <h6 class="card-title">Đi Tìm Nhân Dạng</h6>
                     <p class="card-text">123.000 đ</p>
-                    <a href="#" class="btn btn-primary stretched-link">Mua ngay</a>
+                    <button type="button" onclick="alert('Sản phẩn có giá là: 123.000đ')">Mua ngay</button>
                 </div>
             </div>
         </div>
@@ -263,7 +350,7 @@
                 <div class="card-body">
                     <h6 class="card-title">Cách Treo Cổ Một Phù Thuỷ</h6>
                     <p class="card-text">122.180 đ</p>
-                    <a href="#" class="btn btn-primary stretched-link">Mua ngay</a>
+                    <button type="button" onclick="alert('Sản phẩn có giá là: 122.180đ')">Mua ngay</button>
                 </div>
             </div>
         </div>
@@ -273,7 +360,7 @@
                 <div class="card-body">
                     <h6 class="card-title">Vua Thành Thái</h6>
                     <p class="card-text">99.400 đ</p>
-                    <a href="#" class="btn btn-primary stretched-link">Mua ngay</a>
+                    <button type="button" onclick="alert('Sản phẩn có giá là: 99.400đ')">Mua ngay</button>
                 </div>
             </div>
         </div>
@@ -283,7 +370,7 @@
                 <div class="card-body">
                     <h6 class="card-title">Cậu Bé & Quái Vật</h6>
                     <p class="card-text">80.750 đ</p>
-                    <a href="#" class="btn btn-primary stretched-link">Mua ngay</a>
+                    <button type="button" onclick="alert('Sản phẩn có giá là: 80.750đ')">Mua ngay</button>
                 </div>
             </div>
         </div>
@@ -359,5 +446,81 @@
     </div>
     <!-- Copyright -->
   </footer>
+<!-- Messenger Plugin chat Code -->
+<div id="fb-root"></div>
+
+<!-- Your Plugin chat code -->
+<div id="fb-customer-chat" class="fb-customerchat">
+</div>
+<div class="fb-comments" data-href="https://www.facebook.com/photo/?fbid=115075977475522&amp;set=a.112943851022068" data-width="" data-numposts="5"></div>
+<div class="fb-like" data-href="https://www.facebook.com/JinKun.yt" data-width="" data-layout="standard" data-action="like" data-size="small" data-share="true"></div>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+  var chatbox = document.getElementById('fb-customer-chat');
+  chatbox.setAttribute("page_id", "112271347763440");
+  chatbox.setAttribute("attribution", "biz_inbox");
+
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml            : true,
+      version          : 'v11.0'
+    });
+  };
+
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+<script>
+    function myFunction1() {
+       var element = document.body;
+       element.classList.toggle("dark-mode");
+    }
+</script>
+<script>
+    //Get the button
+    var mybutton = document.getElementById("myBtn");
+    
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+    
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+</script>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v11.0" nonce="eF0uygqN"></script>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v11.0" nonce="vKY5yKu7"></script>
+<script>
+    function myFunction() {
+      alert("Page is loaded");
+    }
+</script>
+<script>
+    function openNav() {
+      document.getElementById("mySidebar").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+    }
+    
+    function closeNav() {
+      document.getElementById("mySidebar").style.width = "0";
+      document.getElementById("main").style.marginLeft= "0";
+    }
+</script>
 </body>
 </html>
